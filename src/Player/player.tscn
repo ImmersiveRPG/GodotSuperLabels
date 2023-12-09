@@ -1,0 +1,82 @@
+[gd_scene load_steps=11 format=3 uid="uid://mvxxsx6o58ij"]
+
+[ext_resource type="Script" path="res://src/Player/player.gd" id="1_m0utd"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fsjdy"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ps8w"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_rqhdh"]
+material = SubResource("StandardMaterial3D_0ps8w")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ppga8"]
+size = Vector3(4, 8, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v20nu"]
+size = Vector3(4, 8, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rje7a"]
+size = Vector3(24, 4, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d84ss"]
+size = Vector3(24, 4, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4dbvc"]
+size = Vector3(24, 16, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kww4g"]
+size = Vector3(24, 16, 5)
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_m0utd")
+
+[node name="CameraMount" type="Node3D" parent="."]
+
+[node name="v" type="Node3D" parent="CameraMount"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+
+[node name="Camera3D" type="Camera3D" parent="CameraMount/v"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_fsjdy")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
+mesh = SubResource("CapsuleMesh_rqhdh")
+
+[node name="Area3D" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -3)
+collision_layer = 4
+collision_mask = 6
+freeze = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 1, 0)
+shape = SubResource("BoxShape3D_ppga8")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 1, 0)
+shape = SubResource("BoxShape3D_v20nu")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0)
+shape = SubResource("BoxShape3D_rje7a")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, 0)
+shape = SubResource("BoxShape3D_d84ss")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 3)
+shape = SubResource("BoxShape3D_4dbvc")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -3)
+shape = SubResource("BoxShape3D_kww4g")
+
+[node name="TimerStart" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="TimerStart" to="." method="_on_timer_start_timeout"]

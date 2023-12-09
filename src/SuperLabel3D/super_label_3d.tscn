@@ -5,14 +5,15 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_qhk2w"]
 
 [node name="SuperLabel3D" type="RigidBody3D"]
-collision_mask = 3
+collision_layer = 2
+collision_mask = 6
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
 gravity_scale = 0.0
 script = ExtResource("1_28kvb")
 line_color = Color(1, 1, 1, 1)
-text = ""
+text = "Default text"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_qhk2w")
@@ -22,10 +23,10 @@ pixel_size = 0.001
 offset = Vector2(0, 10)
 billboard = 1
 fixed_size = true
+text = "Default text"
 
 [node name="TimerUpdateLine" type="Timer" parent="."]
 wait_time = 0.017
-autostart = true
 
 [node name="Line2D" type="Line2D" parent="."]
 width = 1.0

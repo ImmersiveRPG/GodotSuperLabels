@@ -5,4 +5,11 @@
 
 extends Node
 
-var _camera : Camera3D
+var _camera : Camera3D = null
+var _labels := []
+
+const MOUSE_SENSITIVITY := 0.1
+const MOUSE_ACCELERATION_X := 10.0
+const MOUSE_ACCELERATION_Y := 10.0
+const MOUSE_Y_MAX := 70.0
+const MOUSE_Y_MIN := -60.0
