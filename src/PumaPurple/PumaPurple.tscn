@@ -1,0 +1,60 @@
+[gd_scene load_steps=7 format=3 uid="uid://cf5urqwud6x6d"]
+
+[ext_resource type="Material" uid="uid://e83ileiq1owb" path="res://src/PumaPurple/purple.material" id="1_nobq4"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_8p7ro"]
+material = ExtResource("1_nobq4")
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_kbey5"]
+material = ExtResource("1_nobq4")
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_3pw3o"]
+material = ExtResource("1_nobq4")
+radius = 0.1
+height = 1.0
+
+[sub_resource type="PrismMesh" id="PrismMesh_lofb8"]
+material = ExtResource("1_nobq4")
+size = Vector3(0.3, 0.3, 0.3)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ep346"]
+material = ExtResource("1_nobq4")
+radius = 0.1
+
+[node name="PumaPurple" type="Node3D"]
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.934219, -0.642457)
+mesh = SubResource("SphereMesh_8p7ro")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.91069e-15, 4.37114e-08, -1, 1, -4.37114e-08, 0, -4.37114e-08, -1, -4.37114e-08, 0, -0.0203229, 0.0840263)
+mesh = SubResource("CapsuleMesh_kbey5")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.391202, -0.540889, -0.498301)
+mesh = SubResource("CapsuleMesh_3pw3o")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.367588, -0.540889, -0.498301)
+mesh = SubResource("CapsuleMesh_3pw3o")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.391202, -0.540889, 0.718254)
+mesh = SubResource("CapsuleMesh_3pw3o")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.367588, -0.540889, 0.718254)
+mesh = SubResource("CapsuleMesh_3pw3o")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0.557354, 0.830275, 2.43627e-08, -0.830275, 0.557354, -3.62925e-08, 0.113757, 1.40138, -0.313015)
+mesh = SubResource("PrismMesh_lofb8")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, -0.543453, 0.83944, -2.37551e-08, -0.83944, -0.543453, -3.66931e-08, 0.113757, 1.40138, -0.979086)
+mesh = SubResource("PrismMesh_lofb8")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.866025, -0.5, 0, 0.5, 0.866025, 0, 0.979677, 1.35669)
+mesh = SubResource("CapsuleMesh_ep346")

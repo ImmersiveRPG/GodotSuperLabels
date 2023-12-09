@@ -1,8 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://cid3i2nc1ja35"]
+[gd_scene load_steps=15 format=3 uid="uid://cid3i2nc1ja35"]
 
 [ext_resource type="Script" path="res://src/Start/start.gd" id="1_u7ylx"]
+[ext_resource type="PackedScene" uid="uid://cf5urqwud6x6d" path="res://src/PumaPurple/PumaPurple.tscn" id="2_cxawx"]
 [ext_resource type="PackedScene" uid="uid://03q5rksnb3b0" path="res://src/SuperLabel3D/SuperLabel3D.tscn" id="2_we747"]
 [ext_resource type="PackedScene" uid="uid://mvxxsx6o58ij" path="res://src/Player/player.tscn" id="3_110rh"]
+[ext_resource type="PackedScene" uid="uid://bqktgv40yhd3l" path="res://src/PumaOrange/PumaOrange.tscn" id="3_nq1ql"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sbbop"]
 albedo_color = Color(1, 0, 0, 1)
@@ -52,6 +54,12 @@ mesh = SubResource("BoxMesh_q8asg")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.31151, 1.94316, -6)
 mesh = SubResource("SphereMesh_yqx1b")
 
+[node name="PumaPurple" parent="." instance=ExtResource("2_cxawx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47, 1.06238, 0)
+
+[node name="PumaOrange" parent="." instance=ExtResource("3_nq1ql")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 1, 0)
+
 [node name="SuperLabel3D" parent="." instance=ExtResource("2_we747")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.39928, 4.35107, 0)
 _attached_to_node_path = NodePath("../Cone")
@@ -69,6 +77,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.39928, 4.35107, 0)
 _attached_to_node_path = NodePath("../Sphere")
 line_color = Color(0, 1, 0, 1)
 text = "Sphere"
+
+[node name="SuperLabel3D4" parent="." instance=ExtResource("2_we747")]
+_attached_to_node_path = NodePath("../PumaPurple")
+line_color = Color(0.619608, 0, 0.619608, 1)
+text = "Night Weapon"
+
+[node name="SuperLabel3D5" parent="." instance=ExtResource("2_we747")]
+_attached_to_node_path = NodePath("../PumaOrange")
+line_color = Color(1, 0.521569, 0, 1)
+text = "Deamon Baby"
 
 [node name="Floor" type="StaticBody3D" parent="."]
 
