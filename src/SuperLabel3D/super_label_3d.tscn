@@ -3,13 +3,11 @@
 [ext_resource type="Script" path="res://src/SuperLabel3D/super_label_3d.gd" id="1_28kvb"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_qhk2w"]
+radius = 0.4
 
 [node name="SuperLabel3D" type="RigidBody3D"]
 collision_layer = 2
 collision_mask = 6
-axis_lock_angular_x = true
-axis_lock_angular_y = true
-axis_lock_angular_z = true
 gravity_scale = 0.0
 script = ExtResource("1_28kvb")
 line_color = Color(1, 1, 1, 1)

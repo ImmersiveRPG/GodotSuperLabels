@@ -47,7 +47,7 @@ func _ready() -> void:
 	if not Engine.is_editor_hint():
 		Global._labels.append(self)
 
-func _physics_processXXX(delta : float) -> void:
+func _physics_process(delta : float) -> void:
 	self.linear_velocity = self.linear_velocity.lerp(Vector3.ZERO, delta)
 
 func set_color(outline_color : Color, font_color : Color) -> void:
