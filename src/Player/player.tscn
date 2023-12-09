@@ -10,16 +10,16 @@
 material = SubResource("StandardMaterial3D_0ps8w")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ppga8"]
-size = Vector3(4, 8, 1)
+size = Vector3(4, 8, 2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_v20nu"]
-size = Vector3(4, 8, 1)
+size = Vector3(4, 8, 2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rje7a"]
-size = Vector3(24, 4, 1)
+size = Vector3(24, 4, 2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_d84ss"]
-size = Vector3(24, 4, 1)
+size = Vector3(24, 4, 2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4dbvc"]
 size = Vector3(24, 16, 5)
@@ -67,11 +67,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, 0)
 shape = SubResource("BoxShape3D_d84ss")
 
 [node name="CollisionShape3D5" type="CollisionShape3D" parent="LabelContainer"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 3.5)
 shape = SubResource("BoxShape3D_4dbvc")
 
 [node name="CollisionShape3D6" type="CollisionShape3D" parent="LabelContainer"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -3.5)
 shape = SubResource("BoxShape3D_kww4g")
 
 [node name="TimerStart" type="Timer" parent="."]
