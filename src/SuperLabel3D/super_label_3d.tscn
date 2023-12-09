@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://03q5rksnb3b0"]
+
+[ext_resource type="Script" path="res://src/SuperLabel3D/super_label_3d.gd" id="1_28kvb"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_qhk2w"]
+
+[node name="SuperLabel3D" type="RigidBody3D"]
+collision_mask = 3
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+gravity_scale = 0.0
+script = ExtResource("1_28kvb")
+line_color = Color(1, 1, 1, 1)
+text = ""
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_qhk2w")
+
+[node name="Label3D" type="Label3D" parent="."]
+pixel_size = 0.001
+offset = Vector2(0, 10)
+billboard = 1
+fixed_size = true
+
+[node name="TimerUpdateLine" type="Timer" parent="."]
+wait_time = 0.017
+autostart = true
+
+[node name="Line2D" type="Line2D" parent="."]
+width = 1.0
+
+[connection signal="timeout" from="TimerUpdateLine" to="." method="_on_timer_update_line_timeout"]
