@@ -1,3 +1,7 @@
+# Copyright (c) 2023 Matthew Brennan Jones <matthew.brennan.jones@gmail.com>
+# This file is licensed under the MIT License
+# https://github.com/ImmersiveRPG/GodotSuperLabels
+
 extends CharacterBody3D
 
 
@@ -8,7 +12,7 @@ var _camera_y := 0.0
 var _camera_x_new := 0.0
 var _camera_y_new := 0.0
 
-var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
+var gravity : float = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 func _ready() -> void:
 	Global._camera = $CameraMount/v/Camera3D
@@ -29,24 +33,24 @@ func _process(delta : float) -> void:
 	$CameraMount/v.rotation_degrees.x = lerp($CameraMount/v.rotation_degrees.x, _camera_y, delta * Global.MOUSE_ACCELERATION_X)
 
 func _physics_process(delta : float) -> void:
-	# Add the gravity.
-	if not is_on_floor():
-		velocity.y -= gravity * delta
+	# Add the gravity
+	if not self.is_on_floor():
+		self.velocity.y -= gravity * delta
 
-	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+	# Handle jump
+	if Input.is_action_just_pressed("ui_accept") and self.is_on_floor():
+		self.velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var input_dir = Input.get_vector("left", "right", "up", "down")
-	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	var input_dir := Input.get_vector("left", "right", "up", "down")
+	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
+		self.velocity.x = direction.x * SPEED
+		self.velocity.z = direction.z * SPEED
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
+		self.velocity.x = move_toward(self.velocity.x, 0, SPEED)
+		self.velocity.z = move_toward(self.velocity.z, 0, SPEED)
 
 	self.move_and_slide()
 
@@ -54,5 +58,5 @@ func _physics_process(delta : float) -> void:
 func _on_timer_start_timeout() -> void:
 	while not Global._labels.is_empty():
 		var label = Global._labels.pop_back()
-		label.global_transform.origin = $Area3D.global_transform.origin
+		label.global_transform.origin = $LabelContainer.global_transform.origin
 		label.get_node("TimerUpdateLine").start()

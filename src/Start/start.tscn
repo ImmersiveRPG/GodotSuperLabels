@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://cid3i2nc1ja35"]
 
 [ext_resource type="Script" path="res://src/Start/start.gd" id="1_u7ylx"]
-[ext_resource type="PackedScene" uid="uid://03q5rksnb3b0" path="res://src/SuperLabel3D/super_label_3d.tscn" id="2_we747"]
+[ext_resource type="PackedScene" uid="uid://03q5rksnb3b0" path="res://src/SuperLabel3D/SuperLabel3D.tscn" id="2_we747"]
 [ext_resource type="PackedScene" uid="uid://mvxxsx6o58ij" path="res://src/Player/player.tscn" id="3_110rh"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sbbop"]
