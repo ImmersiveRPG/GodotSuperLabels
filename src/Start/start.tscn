@@ -45,6 +45,7 @@ environment = SubResource("Environment_q5vga")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.707107, 3.09086e-08, -0.707107, 0.707107, -3.09086e-08, 0.707107, 0, -1, -4.37114e-08, 0, 65, 0)
+shadow_enabled = true
 
 [node name="Floor" parent="." instance=ExtResource("5_vwpq2")]
 
