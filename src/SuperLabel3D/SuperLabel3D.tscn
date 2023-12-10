@@ -10,6 +10,7 @@ collision_layer = 2
 collision_mask = 6
 gravity_scale = 0.0
 script = ExtResource("1_28kvb")
+_visibility_distance = 50.0
 line_color = Color(1, 1, 1, 1)
 text = "Default text"
 

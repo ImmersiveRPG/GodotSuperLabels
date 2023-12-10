@@ -88,7 +88,7 @@ text = "Night Weapon"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.8594, 4.05, 0)
 _attached_to_node_path = NodePath("../PumaOrange")
 line_color = Color(1, 0.521569, 0, 1)
-text = "Deamon Baby"
+text = "Demon Baby"
 
 [node name="Floor" type="StaticBody3D" parent="."]
 

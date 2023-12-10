@@ -9,6 +9,7 @@ var _is_setup := false
 var _outline_color := Color.BLACK
 var _font_color := Color.WHITE
 var _line_color := Color.WHITE
+@export var _visibility_distance : float = 20.0
 var _text : String = ""
 @onready var _line : Line2D = $Line2D
 
@@ -66,10 +67,13 @@ func _on_timer_update_line_timeout() -> void:
 	_line.points.clear()
 	var src := self.global_transform.origin
 	var dest : Vector3 = _attached_to.global_transform.origin
+	var distance := src.distance_to(dest)
 	#print([self, _attached_to])
 	#self.get_viewport().get_camera_3d()
 
-	var is_visible := Global._camera.is_position_in_frustum(dest)
+	var is_in_range := distance <= _visibility_distance
+	var is_in_frustum := Global._camera.is_position_in_frustum(dest)
+	var is_visible := is_in_range and is_in_frustum
 
 	var points := PackedVector2Array()
 	if is_visible:
