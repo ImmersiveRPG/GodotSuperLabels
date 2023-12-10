@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://dlqnnoqowodcr"]
+
+[ext_resource type="Material" uid="uid://bf3ntygf0j74h" path="res://src/RabbitWhite/white.material" id="1_1ooqu"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_d6i4n"]
+material = ExtResource("1_1ooqu")
+height = 1.5
+
+[sub_resource type="SphereMesh" id="SphereMesh_osegr"]
+material = ExtResource("1_1ooqu")
+radius = 0.3
+height = 0.6
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_370ce"]
+material = ExtResource("1_1ooqu")
+radius = 0.05
+height = 0.5
+
+[node name="RabbitWhite" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.5348, 0)
+mesh = SubResource("CapsuleMesh_d6i4n")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0134341, 0.914276, -0.876233)
+mesh = SubResource("SphereMesh_osegr")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.931285, -0.364292, 0, 0.364292, 0.931285, 0.120601, 1.32934, -0.85906)
+mesh = SubResource("CapsuleMesh_370ce")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.931285, -0.364292, 0, 0.364292, 0.931285, -0.124352, 1.32934, -0.85906)
+mesh = SubResource("CapsuleMesh_370ce")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.931285, -0.364292, 0, 0.364292, 0.931285, -0.296277, 0.25371, -0.529333)
+mesh = SubResource("CapsuleMesh_370ce")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.296277, 0.0545557, 0.166175)
+mesh = SubResource("CapsuleMesh_370ce")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.281038, 0.0545557, 0.166175)
+mesh = SubResource("CapsuleMesh_370ce")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.931285, -0.364292, 0, 0.364292, 0.931285, 0.242907, 0.25371, -0.529333)
+mesh = SubResource("CapsuleMesh_370ce")
