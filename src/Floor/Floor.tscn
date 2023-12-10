@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cb4rcmxdjaqof"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_adpb4"]
+size = Vector3(100, 2, 100)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qnuyt"]
+albedo_color = Color(0.560784, 0.309804, 0.0784314, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_npec1"]
+material = SubResource("StandardMaterial3D_qnuyt")
+size = Vector3(100, 2, 100)
+
+[node name="Floor" type="StaticBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+shape = SubResource("BoxShape3D_adpb4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
+mesh = SubResource("BoxMesh_npec1")
