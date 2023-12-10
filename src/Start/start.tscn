@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cid3i2nc1ja35"]
+[gd_scene load_steps=17 format=3 uid="uid://cid3i2nc1ja35"]
 
 [ext_resource type="Script" path="res://src/Start/start.gd" id="1_u7ylx"]
 [ext_resource type="PackedScene" uid="uid://cf5urqwud6x6d" path="res://src/PumaPurple/PumaPurple.tscn" id="2_cxawx"]
@@ -7,6 +7,15 @@
 [ext_resource type="PackedScene" uid="uid://bqktgv40yhd3l" path="res://src/PumaOrange/PumaOrange.tscn" id="3_nq1ql"]
 [ext_resource type="PackedScene" uid="uid://dlqnnoqowodcr" path="res://src/RabbitWhite/RabbitWhite.tscn" id="5_s1faj"]
 [ext_resource type="PackedScene" uid="uid://cb4rcmxdjaqof" path="res://src/Floor/Floor.tscn" id="5_vwpq2"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_g3yy0"]
+
+[sub_resource type="Sky" id="Sky_oblsh"]
+sky_material = SubResource("ProceduralSkyMaterial_g3yy0")
+
+[sub_resource type="Environment" id="Environment_q5vga"]
+background_mode = 2
+sky = SubResource("Sky_oblsh")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sbbop"]
 albedo_color = Color(1, 0, 0, 1)
@@ -31,10 +40,13 @@ material = SubResource("StandardMaterial3D_1b5bq")
 [node name="Start" type="Node3D"]
 script = ExtResource("1_u7ylx")
 
-[node name="Floor" parent="." instance=ExtResource("5_vwpq2")]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_q5vga")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.707107, 3.09086e-08, -0.707107, 0.707107, -3.09086e-08, 0.707107, 0, -1, -4.37114e-08, 0, 65, 0)
+
+[node name="Floor" parent="." instance=ExtResource("5_vwpq2")]
 
 [node name="Cone" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.3061, 3.1982, -15)
@@ -55,7 +67,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47, 1.06238, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 1, 0)
 
 [node name="RabbitWhite" parent="." instance=ExtResource("5_s1faj")]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 38, -34)
+transform = Transform3D(-4.37114e-07, 0, 10, 0, 10, 0, -10, 0, -4.37114e-07, 0, 38, -34)
 
 [node name="LabelCone" parent="." instance=ExtResource("2_we747")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.3565, 4.35107, 0)
