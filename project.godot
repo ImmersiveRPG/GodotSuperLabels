@@ -19,10 +19,6 @@ config/icon="res://icon.svg"
 
 Global="*res://src/Singletons/Global.gd"
 
-[display]
-
-window/size/mode=2
-
 [input]
 
 left={

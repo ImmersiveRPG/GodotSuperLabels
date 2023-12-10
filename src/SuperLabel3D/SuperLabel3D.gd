@@ -45,9 +45,6 @@ func _ready() -> void:
 	$Label3D.modulate = _line_color
 	_attached_to = self.get_node(_attached_to_node_path)
 
-	if not Engine.is_editor_hint():
-		Global._labels.append(self)
-
 func _physics_process(delta : float) -> void:
 	self.linear_velocity = self.linear_velocity.lerp(Vector3.ZERO, delta)
 
@@ -67,7 +64,7 @@ func _on_timer_update_line_timeout() -> void:
 	_line.points.clear()
 	var src := self.global_transform.origin
 	var dest : Vector3 = _attached_to.global_transform.origin
-	var distance := src.distance_to(dest)
+	var distance := Global._camera.global_transform.origin.distance_to(dest)
 	#print([self, _attached_to])
 	#self.get_viewport().get_camera_3d()
 
@@ -87,3 +84,30 @@ func _on_timer_update_line_timeout() -> void:
 		self.visible = false
 
 	_line.points = points
+
+
+func _on_timer_update_distance_timeout() -> void:
+	if not _is_setup: return
+
+	#var src := self.global_transform.origin
+	var dest : Vector3 = _attached_to.global_transform.origin
+	var distance := Global._camera.global_transform.origin.distance_to(dest)
+	var is_in_range := distance <= _visibility_distance
+
+	#if not Engine.is_editor_hint():
+	if is_in_range:
+		if Global._labels.find(self) == -1:
+			print("Adding %s" % [self.name])
+			Global._labels.append(self)
+			self.global_transform.origin = Global._label_container.global_transform.origin
+			$TimerUpdateLine.start()
+	else:
+		if Global._labels.find(self) != -1:
+			print("Removing %s" % [self.name])
+			Global._labels.erase(self)
+			$TimerUpdateLine.stop()
+			_line.points.clear()
+		self.global_transform.origin = dest + Vector3(0, 5, 0)
+		self.linear_velocity = Vector3.ZERO
+		self.angular_velocity = Vector3.ZERO
+

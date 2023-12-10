@@ -16,6 +16,7 @@ var gravity : float = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 func _ready() -> void:
 	Global._camera = $CameraMount/v/Camera3D
+	Global._label_container = $LabelContainer
 
 func _input(event : InputEvent) -> void:
 	# Rotate camera with mouse
@@ -55,8 +56,4 @@ func _physics_process(delta : float) -> void:
 	self.move_and_slide()
 
 
-func _on_timer_start_timeout() -> void:
-	while not Global._labels.is_empty():
-		var label = Global._labels.pop_back()
-		label.global_transform.origin = $LabelContainer.global_transform.origin
-		label.get_node("TimerUpdateLine").start()
+

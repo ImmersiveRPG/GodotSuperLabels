@@ -27,7 +27,11 @@ text = "Default text"
 [node name="TimerUpdateLine" type="Timer" parent="."]
 wait_time = 0.017
 
+[node name="TimerUpdateDistance" type="Timer" parent="."]
+autostart = true
+
 [node name="Line2D" type="Line2D" parent="."]
 width = 1.0
 
 [connection signal="timeout" from="TimerUpdateLine" to="." method="_on_timer_update_line_timeout"]
+[connection signal="timeout" from="TimerUpdateDistance" to="." method="_on_timer_update_distance_timeout"]

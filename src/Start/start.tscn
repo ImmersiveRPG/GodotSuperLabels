@@ -47,7 +47,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.3061, 3.1982, -15)
 mesh = SubResource("CylinderMesh_k5mff")
 
 [node name="Box" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9687, 4.10179, -6)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9687, 9.10179, -6)
 mesh = SubResource("BoxMesh_q8asg")
 
 [node name="Sphere" type="MeshInstance3D" parent="."]
@@ -60,31 +60,31 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47, 1.06238, 0)
 [node name="PumaOrange" parent="." instance=ExtResource("3_nq1ql")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 1, 0)
 
-[node name="SuperLabel3D" parent="." instance=ExtResource("2_we747")]
+[node name="LabelCone" parent="." instance=ExtResource("2_we747")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.3565, 4.35107, 0)
 _attached_to_node_path = NodePath("../Cone")
 line_color = Color(1, 0, 0, 1)
 text = "Cone"
 
-[node name="SuperLabel3D2" parent="." instance=ExtResource("2_we747")]
+[node name="LabelBox" parent="." instance=ExtResource("2_we747")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.3222, 4.35107, 0)
 _attached_to_node_path = NodePath("../Box")
 line_color = Color(0, 0, 1, 1)
 text = "Box"
 
-[node name="SuperLabel3D3" parent="." instance=ExtResource("2_we747")]
+[node name="LabelSphere" parent="." instance=ExtResource("2_we747")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.78812, 4.35107, 0)
 _attached_to_node_path = NodePath("../Sphere")
 line_color = Color(0, 1, 0, 1)
 text = "Sphere"
 
-[node name="SuperLabel3D4" parent="." instance=ExtResource("2_we747")]
+[node name="LabelPumaPurple" parent="." instance=ExtResource("2_we747")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5836, 4.3036, 0)
 _attached_to_node_path = NodePath("../PumaPurple")
 line_color = Color(0.619608, 0, 0.619608, 1)
 text = "Night Weapon"
 
-[node name="SuperLabel3D5" parent="." instance=ExtResource("2_we747")]
+[node name="LabelPumaOrange" parent="." instance=ExtResource("2_we747")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.8594, 4.05, 0)
 _attached_to_node_path = NodePath("../PumaOrange")
 line_color = Color(1, 0.521569, 0, 1)

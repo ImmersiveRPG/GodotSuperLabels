@@ -7,6 +7,7 @@ extends Node
 
 var _camera : Camera3D = null
 var _labels := []
+var _label_container = null
 
 const MOUSE_SENSITIVITY := 0.1
 const MOUSE_ACCELERATION_X := 10.0
