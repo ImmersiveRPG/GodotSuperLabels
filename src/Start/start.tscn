@@ -64,10 +64,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.31151, 1.94316, -6)
 mesh = SubResource("SphereMesh_yqx1b")
 
 [node name="PumaPurple" parent="." instance=ExtResource("2_cxawx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47, 1.06238, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47, 0, 0)
 
 [node name="PumaOrange" parent="." instance=ExtResource("3_nq1ql")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 0, 0)
 
 [node name="RabbitWhite" parent="." instance=ExtResource("5_s1faj")]
 transform = Transform3D(-4.37114e-07, 0, 10, 0, 10, 0, -10, 0, -4.37114e-07, 0, 38, -34)
@@ -115,3 +115,32 @@ text = "Rival Cuteness"
 
 [node name="Player" parent="." instance=ExtResource("3_110rh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 26)
+
+[node name="Positions" type="Node3D" parent="."]
+
+[node name="Marker3D" type="Marker3D" parent="Positions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.5639, 0, 41.1413)
+
+[node name="Marker3D2" type="Marker3D" parent="Positions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.6911, 0, 41.1413)
+
+[node name="Marker3D3" type="Marker3D" parent="Positions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.6911, 0, -41.8457)
+
+[node name="Marker3D4" type="Marker3D" parent="Positions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.2821, 0, -41.8457)
+
+[node name="Marker3D5" type="Marker3D" parent="Positions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.140892, 0, 39.8732)
+
+[node name="Marker3D6" type="Marker3D" parent="Positions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.140892, 0, -42.832)
+
+[node name="Marker3D7" type="Marker3D" parent="Positions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.9729, 0, -0.845371)
+
+[node name="Marker3D8" type="Marker3D" parent="Positions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.7323, 0, -0.845371)
+
+[node name="Marker3D9" type="Marker3D" parent="Positions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.281788, 0, -0.845371)
