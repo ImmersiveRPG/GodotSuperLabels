@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://bb327etmuiiyi"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ppga8"]
+size = Vector3(4, 8, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v20nu"]
+size = Vector3(4, 8, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rje7a"]
+size = Vector3(24, 4, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d84ss"]
+size = Vector3(24, 4, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4dbvc"]
+size = Vector3(24, 16, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kww4g"]
+size = Vector3(24, 16, 5)
+
+[node name="SuperLabelContainer" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -3)
+collision_layer = 4
+collision_mask = 6
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 1, 0)
+shape = SubResource("BoxShape3D_ppga8")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 1, 0)
+shape = SubResource("BoxShape3D_v20nu")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0)
+shape = SubResource("BoxShape3D_rje7a")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, 0)
+shape = SubResource("BoxShape3D_d84ss")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 3.5)
+shape = SubResource("BoxShape3D_4dbvc")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -3.5)
+shape = SubResource("BoxShape3D_kww4g")

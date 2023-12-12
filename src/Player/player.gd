@@ -16,7 +16,7 @@ var gravity : float = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 func _ready() -> void:
 	Global._camera = $CameraMount/v/Camera3D
-	Global._label_container = $LabelContainer
+	Global._label_container = $SuperLabelContainer
 
 func _input(event : InputEvent) -> void:
 	# Rotate camera with mouse
