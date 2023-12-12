@@ -75,35 +75,41 @@ transform = Transform3D(-4.37114e-07, 0, 10, 0, 10, 0, -10, 0, -4.37114e-07, 0, 
 [node name="LabelCone" parent="." instance=ExtResource("2_we747")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.3565, 4.35107, 0)
 _attached_to_node_path = NodePath("../Cone")
+font_color = Color(1, 0, 0, 1)
 line_color = Color(1, 0, 0, 1)
 text = "Cone"
 
 [node name="LabelBox" parent="." instance=ExtResource("2_we747")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.3222, 4.35107, 0)
 _attached_to_node_path = NodePath("../Box")
+font_color = Color(0, 0, 1, 1)
 line_color = Color(0, 0, 1, 1)
 text = "Box"
 
 [node name="LabelSphere" parent="." instance=ExtResource("2_we747")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.78812, 4.35107, 0)
 _attached_to_node_path = NodePath("../Sphere")
+font_color = Color(0, 1, 0, 1)
 line_color = Color(0, 1, 0, 1)
 text = "Sphere"
 
 [node name="LabelPumaPurple" parent="." instance=ExtResource("2_we747")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5836, 4.3036, 0)
 _attached_to_node_path = NodePath("../PumaPurple")
+font_color = Color(0.619608, 0, 0.619608, 1)
 line_color = Color(0.619608, 0, 0.619608, 1)
 text = "Night Weapon"
 
 [node name="LabelPumaOrange" parent="." instance=ExtResource("2_we747")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.8594, 4.05, 0)
 _attached_to_node_path = NodePath("../PumaOrange")
+font_color = Color(1, 0.521569, 0, 1)
 line_color = Color(1, 0.521569, 0, 1)
 text = "Demon Baby"
 
 [node name="LabelRabbitWhite" parent="." instance=ExtResource("2_we747")]
-_visibility_distance = 100.0
+_dock_distance = 100.0
+_visibility_distance = 150.0
 _attached_to_node_path = NodePath("../RabbitWhite")
 text = "Rival Cuteness"
 
