@@ -2,7 +2,7 @@
 
 Godot 3D Labels that wont overlap
 
-![my screenshot](Screenshot.png)
+![my screenshot](Screenshot.jpeg)
 
 # TODO:
 

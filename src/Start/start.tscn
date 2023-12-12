@@ -25,19 +25,23 @@ albedo_color = Color(1, 0, 0, 1)
 [sub_resource type="CylinderMesh" id="CylinderMesh_k5mff"]
 material = SubResource("StandardMaterial3D_sbbop")
 top_radius = 0.0
-bottom_radius = 1.0
+bottom_radius = 2.0
+height = 4.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s3rjj"]
 albedo_color = Color(0, 0, 1, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_q8asg"]
 material = SubResource("StandardMaterial3D_s3rjj")
+size = Vector3(2, 2, 2)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1b5bq"]
 albedo_color = Color(0, 1, 0, 1)
 
 [sub_resource type="SphereMesh" id="SphereMesh_yqx1b"]
 material = SubResource("StandardMaterial3D_1b5bq")
+radius = 2.0
+height = 4.0
 
 [node name="Start" type="Node3D"]
 script = ExtResource("1_u7ylx")
@@ -52,15 +56,15 @@ shadow_enabled = true
 [node name="Floor" parent="." instance=ExtResource("5_vwpq2")]
 
 [node name="Cone" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.3061, 3.1982, -15)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.3061, 5.1982, -15)
 mesh = SubResource("CylinderMesh_k5mff")
 
 [node name="Box" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9687, 9.10179, -6)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9687, 9.10179, -26.0912)
 mesh = SubResource("BoxMesh_q8asg")
 
 [node name="Sphere" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.31151, 1.94316, -6)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.31151, 5.94316, 2)
 mesh = SubResource("SphereMesh_yqx1b")
 
 [node name="PumaPurple" parent="." instance=ExtResource("2_cxawx")]
